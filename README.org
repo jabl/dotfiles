@@ -1,6 +1,6 @@
 * dotfiles
 
-Repository for dotfiles, managed with GNU stow
+Repository for dotfiles, managed with GNU stow.
 
 ** How it works
 
