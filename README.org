@@ -1,3 +1,11 @@
 * dotfiles
 
 Repository for dotfiles, managed with GNU stow
+
+** How it works
+
+See
+http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
+
+tl;dr: Each program (really, collection of dotfiles) live in their own
+subdirectory, which is a mirror of the home directory structure.
