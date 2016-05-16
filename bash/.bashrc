@@ -5,6 +5,7 @@ alias e='emacsclient -c -a "" '
 export CLICOLOR=1 # Color ls
 export IPYTHON=1 # pyspark using ipython shell
 export FCFLAGS="-O3 -pipe -march=native"
+export RUST_SRC_PATH=~/Documents/rust/rust/src # For racer
 
 # Some useful options from
 # https://github.com/mrzool/bash-sensible/blob/master/sensible.bash
