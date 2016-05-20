@@ -16,6 +16,10 @@
 (setq inhibit-splash-screen t)
 (show-paren-mode t)
 
+; uniquify not default on 24.3 (Ubuntu 14.04)
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+
 ;; Various file formats..
 ; Markdown-mode (not automatic unless installed via elpa)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
