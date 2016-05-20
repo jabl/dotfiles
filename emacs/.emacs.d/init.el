@@ -20,6 +20,14 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
+;; Mac OS X
+;; This makes the cmd key meta, and makes typing {} work
+;; (alt-shift-8/9)
+(when (eq system-type 'darwin)
+  (setq mac-command-modifier 'meta
+	mac-option-modifier nil)
+  )
+
 ;; Various file formats..
 ; Markdown-mode (not automatic unless installed via elpa)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
