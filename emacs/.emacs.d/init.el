@@ -39,6 +39,20 @@
 ;; C
 (setq c-default-style "linux")
 
+; Use GNU style for C code when contributing to GCC
+(defun maybe-gnu-style ()
+  (when (and buffer-file-name
+             (string-match "gfortran" buffer-file-name))
+    (c-set-style "gnu")))
+
+(add-hook 'c-mode-hook 'maybe-gnu-style)
+
+;; Fortran
+; Use tabs by default, spaces for Fortran
+(defun my-tabs-indent-setup ()
+  (setq indent-tabs-mode nil))
+
+(add-hook 'F90-mode-hook 'my-tabs-indent-setup)
 
 ;; Rust setup
 (add-hook 'rust-mode-hook 'cargo-minor-mode)
