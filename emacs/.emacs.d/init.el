@@ -1,7 +1,9 @@
 ;; Setup package repositories
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+             '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives
+	     '("org" . "http://orgmode.org/elpa/") t)
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
@@ -15,6 +17,7 @@
 (column-number-mode t)
 (setq inhibit-splash-screen t)
 (show-paren-mode t)
+(setq require-final-newline t)
 
 ; uniquify not default on 24.3 (Ubuntu 14.04)
 (require 'uniquify)
