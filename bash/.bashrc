@@ -7,6 +7,12 @@ export IPYTHON=1 # pyspark using ipython shell
 export FCFLAGS="-O3 -pipe -march=native"
 export RUST_SRC_PATH=~/Documents/rust/rust/src # For racer
 
+# OS X 10.10 doesn't include openssl, use homebrew version
+if [[ $(uname -s) == "Darwin" ]]; then
+    export OPENSSL_INCLUDE_DIR=`brew --prefix openssl`/include
+    export OPENSSL_LIB_DIR=`brew --prefix openssl`/lib
+fi
+
 # Some useful options from
 # https://github.com/mrzool/bash-sensible/blob/master/sensible.bash
 
