@@ -20,6 +20,10 @@
 (show-paren-mode t)
 (setq require-final-newline t)
 
+;; Tabs vs spaces (spaces, of course!)
+(setq c-basic-offset 4)
+(setq-default indent-tabs-mode nil)
+
 ; uniquify not default on 24.3 (Ubuntu 14.04)
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
@@ -40,6 +44,11 @@
 
 ;; Programming stuff
 
+;; Makefiles needs tabs
+;(add-hook 'makefile-mode-hook (lambda () (setq-local indent-line-function 'my-makefile-indent-line)))
+;(add-hook 'makefile-mode-hook (lambda () (setq-local indent-tabs-mode t)))
+
+
 ;; C
 (setq c-default-style "linux")
 
@@ -47,12 +56,13 @@
 (defun maybe-gnu-style ()
   (when (and buffer-file-name
              (string-match "gfortran" buffer-file-name))
-    (c-set-style "gnu")))
+    (c-set-style "gnu")
+    (setq indent-tabs-mode t)))
 
 (add-hook 'c-mode-hook 'maybe-gnu-style)
 
 ;; Fortran
-; Use tabs by default, spaces for Fortran
+; Spaces for Fortran
 (defun my-tabs-indent-setup ()
   (setq indent-tabs-mode nil))
 
