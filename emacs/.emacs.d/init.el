@@ -1,10 +1,20 @@
+;; First, some problems with emacs<->gnutls interaction
+;; https://github.com/nicferrier/elmarmalade/issues/55
+;; (if (fboundp 'gnutls-available-p)
+;;     (fmakunbound 'gnutls-available-p))
+;; (setq tls-program '("gnutls-cli --tofu -p %p %h")
+;;       imap-ssl-program '("gnutls-cli --tofu -p %p %s")
+;;       smtpmail-stream-type 'starttls
+;;       starttls-extra-arguments '("--tofu")
+;;       )
+;; (setq package-check-signature nil)
+
 ;; Setup package repositories
 (require 'package)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("marmalade" . "https://marmalade-repo.org/packages/")
-                         ("melpa" . "https://melpa.org/packages/")))
-(add-to-list 'package-archives
-	     '("org" . "http://orgmode.org/elpa/") t)
+                         ("melpa" . "https://melpa.org/packages/")
+                         ("org" . "http://orgmode.org/elpa/")))
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
@@ -43,6 +53,34 @@
 
 
 ;; Programming stuff
+
+;; Lisp
+
+;; paredit
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+
+;; slime
+;; (add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
+(add-hook 'slime-repl-mode-hook #'enable-paredit-mode)
+(add-hook 'slime-mode-hook #'enable-paredit-mode)
+;; Stop SLIME's REPL from grabbing DEL,
+;; which is annoying when backspacing over a '('
+(defun override-slime-repl-bindings-with-paredit ()
+  (paredit-mode +1)
+  (define-key slime-repl-mode-map
+    (read-kbd-macro paredit-backward-delete-key) nil))
+(add-hook 'slime-repl-mode-hook 'override-slime-repl-bindings-with-paredit)
+
+(setq inferior-lisp-program (executable-find "sbcl"))
+
+;; (add-hook 'slime-repl-mode-hook #'company-mode)
+(slime-setup '(slime-fancy slime-company))
 
 ;; Makefiles needs tabs
 ;(add-hook 'makefile-mode-hook (lambda () (setq-local indent-line-function 'my-makefile-indent-line)))
