@@ -39,12 +39,17 @@
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
 ;; Mac OS X
-;; This makes the cmd key meta, and makes typing {} work
-;; (alt-shift-8/9)
+
+;; To reduce Emacs pinky, set cmd keys to control in System
+;; Preferences -> Keyboard -> modifier keys.  Then the problem is that
+;; ALT (option key in mac-jargon) is also needed to type characters
+;; like {} on European keyboards. For this, map the right option key
+;; to meta, and leave the left as-is. Note: This works only for the
+;; GUI Emacs. In the terminal, the terminal.app catches the alt keys
+;; before Emacs gets to interpret them.
 (when (eq system-type 'darwin)
-  (setq mac-command-modifier 'meta
-	mac-option-modifier nil)
-  )
+  (setq mac-right-option-modifier 'meta))
+
 
 ;; Various file formats..
 ; Markdown-mode (not automatic unless installed via elpa)
