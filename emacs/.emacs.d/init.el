@@ -43,12 +43,13 @@
 ;; To reduce Emacs pinky, set cmd keys to control in System
 ;; Preferences -> Keyboard -> modifier keys.  Then the problem is that
 ;; ALT (option key in mac-jargon) is also needed to type characters
-;; like {} on European keyboards. For this, map the right option key
-;; to meta, and leave the left as-is. Note: This works only for the
+;; like {} on European keyboards. For this, map the left option key
+;; to meta, and leave the right as-is. Note: This works only for the
 ;; GUI Emacs. In the terminal, the terminal.app catches the alt keys
 ;; before Emacs gets to interpret them.
 (when (eq system-type 'darwin)
-  (setq mac-right-option-modifier 'meta))
+  (setq mac-option-modifier 'meta
+   mac-right-option-modifier nil))
 
 
 ;; Various file formats..
