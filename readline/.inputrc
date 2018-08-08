@@ -1,0 +1,6 @@
+set enable-bracketed-paste on
+
+# 8-bit handling
+set input-meta on
+set convert-meta off
+set output-meta on
