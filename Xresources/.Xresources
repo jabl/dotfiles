@@ -1,0 +1,7 @@
+Emacs.font: Inconsolata 13
+
+XTerm*faceName: Inconsolata
+XTerm*faceSize: 13
+
+UXTerm*faceName: Inconsolata
+UXTerm*faceSize: 13
