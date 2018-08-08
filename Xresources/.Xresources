@@ -19,10 +19,11 @@ URxvt.boldItalicFont:  xft:Inconsolata:bold:italic:autohint=true:antialias=true,
 
 URxvt*geometry:  132x48
 
-URxvt*perl-ext-common:
-URxvt*perl-ext:
-
 ! If using tmux/screen, disable scrolling
 URxvt*scrollWithBuffer:  false
 URxvt*scrollBar:  false
 URxvt*saveLines:  0
+
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
