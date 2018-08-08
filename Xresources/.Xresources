@@ -6,6 +6,8 @@ XTerm*faceSize: 13
 UXTerm*faceName: Inconsolata
 UXTerm*faceSize: 13
 
+! URxvt config examples e.g. at https://www.askapache.com/linux/rxvt-xresources/
+
 URxvt.font: xft:Inconsolata:autohint=true:antialias=true,\
             xft:DejaVu Sans Mono:autohint=true:antialias=true:pixelsize=8
 URxvt.boldFont: xft:Inconsolata:bold:autohint=true:antialias=true,\
@@ -15,5 +17,12 @@ URxvt.italicFont:  xft:Inconsolata:italic:autohint=true:antialias=true,\
 URxvt.boldItalicFont:  xft:Inconsolata:bold:italic:autohint=true:antialias=true,\
                        xft:DejaVu Sans Mono:bold:italic:autohint=true:antialias=true
 
+URxvt*geometry:  132x48
+
 URxvt*perl-ext-common:
 URxvt*perl-ext:
+
+! If using tmux/screen, disable scrolling
+URxvt*scrollWithBuffer:  false
+URxvt*scrollBar:  false
+URxvt*saveLines:  0
