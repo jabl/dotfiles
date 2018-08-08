@@ -5,3 +5,15 @@ XTerm*faceSize: 13
 
 UXTerm*faceName: Inconsolata
 UXTerm*faceSize: 13
+
+URxvt.font: xft:Inconsolata:autohint=true:antialias=true,\
+            xft:DejaVu Sans Mono:autohint=true:antialias=true:pixelsize=8
+URxvt.boldFont: xft:Inconsolata:bold:autohint=true:antialias=true,\
+                xft:DejaVu Sans Mono:bold:autohint=true:antialias=true
+URxvt.italicFont:  xft:Inconsolata:italic:autohint=true:antialias=true,\
+                   xft:DejaVu Sans Mono:italic:autohint=true:antialias=true
+URxvt.boldItalicFont:  xft:Inconsolata:bold:italic:autohint=true:antialias=true,\
+                       xft:DejaVu Sans Mono:bold:italic:autohint=true:antialias=true
+
+URxvt*perl-ext-common:
+URxvt*perl-ext:
