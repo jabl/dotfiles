@@ -1,6 +1,4 @@
-alias ipy='ipython qtconsole --pylab=inline &'
 alias ll='ls -l'
-alias julia='ipython notebook --profile julia'
 alias e='emacsclient -c -a "" '
 export CLICOLOR=1 # Color ls
 export IPYTHON=1 # pyspark using ipython shell
