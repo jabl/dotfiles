@@ -1,5 +1,7 @@
 alias ll='ls -l'
 alias e='emacsclient -c -a "" '
+export EDITOR='emacsclient -c -a "" '
+export VISUAL='emacsclient -c -a "" '
 export CLICOLOR=1 # Color ls
 export IPYTHON=1 # pyspark using ipython shell
 export FCFLAGS="-O3 -pipe -march=native"
