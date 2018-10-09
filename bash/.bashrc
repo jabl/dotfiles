@@ -1,3 +1,9 @@
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
 alias e='emacsclient -c -a "" '
 export EDITOR='emacsclient -c -a "" '
 export VISUAL='emacsclient -c -a "" '
