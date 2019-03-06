@@ -11,7 +11,7 @@ export CLICOLOR=1 # Color ls
 export IPYTHON=1 # pyspark using ipython shell
 export FCFLAGS="-O3 -pipe -march=native"
 export RUST_SRC_PATH=~/Documents/rust/rust/src # For racer
-export PATH=$PATH:$HOME/.local/bin
+export PATH=$HOME/.cargo/bin:$PATH:$HOME/.local/bin
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
