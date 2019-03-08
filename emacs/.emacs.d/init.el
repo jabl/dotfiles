@@ -25,7 +25,9 @@
 
 ;; Make sure necessary packages are installed
 (setq my-packages
-      '(paredit))
+      '(paredit
+        slime
+        slime-company))
 
 ;; Iterate on packages and install missing ones
 (dolist (pkg my-packages)
@@ -95,6 +97,7 @@
 (setq inferior-lisp-program (executable-find "sbcl"))
 
 ;; (add-hook 'slime-repl-mode-hook #'company-mode)
+(require 'slime-autoloads)
 (slime-setup '(slime-fancy slime-company))
 
 ;; Makefiles needs tabs
