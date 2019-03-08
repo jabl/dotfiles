@@ -23,6 +23,15 @@
 ;; Default dir for extra .el files
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp") t)
 
+;; Make sure necessary packages are installed
+(setq my-packages
+      '(paredit))
+
+;; Iterate on packages and install missing ones
+(dolist (pkg my-packages)
+  (unless (package-installed-p pkg)
+    (package-install pkg)))
+
 ;; Misc
 (require 'generic-x)
 (column-number-mode t)
