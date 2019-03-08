@@ -25,9 +25,7 @@
 
 ;; Make sure necessary packages are installed
 (setq my-packages
-      '(paredit
-        slime
-        slime-company))
+      '(paredit))
 
 ;; Iterate on packages and install missing ones
 (dolist (pkg my-packages)
@@ -83,22 +81,21 @@
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 
 ;; slime
-;; (add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
-(add-hook 'slime-repl-mode-hook #'enable-paredit-mode)
-(add-hook 'slime-mode-hook #'enable-paredit-mode)
+;(add-hook 'slime-repl-mode-hook #'enable-paredit-mode)
+;(add-hook 'slime-mode-hook #'enable-paredit-mode)
 ;; Stop SLIME's REPL from grabbing DEL,
 ;; which is annoying when backspacing over a '('
-(defun override-slime-repl-bindings-with-paredit ()
-  (paredit-mode +1)
-  (define-key slime-repl-mode-map
-    (read-kbd-macro paredit-backward-delete-key) nil))
-(add-hook 'slime-repl-mode-hook 'override-slime-repl-bindings-with-paredit)
+;; (defun override-slime-repl-bindings-with-paredit ()
+;;   (paredit-mode +1)
+;;   (define-key slime-repl-mode-map
+;;     (read-kbd-macro paredit-backward-delete-key) nil))
+;; (add-hook 'slime-repl-mode-hook 'override-slime-repl-bindings-with-paredit)
 
-(setq inferior-lisp-program (executable-find "sbcl"))
+;; (setq inferior-lisp-program (executable-find "sbcl"))
 
-;; (add-hook 'slime-repl-mode-hook #'company-mode)
-(require 'slime-autoloads)
-(slime-setup '(slime-fancy slime-company))
+;; ;; (add-hook 'slime-repl-mode-hook #'company-mode)
+;; (require 'slime-autoloads)
+;; (slime-setup '(slime-fancy slime-company))
 
 ;; Makefiles needs tabs
 ;(add-hook 'makefile-mode-hook (lambda () (setq-local indent-line-function 'my-makefile-indent-line)))
