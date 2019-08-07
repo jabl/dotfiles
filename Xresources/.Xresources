@@ -1,0 +1,94 @@
+# 1 ".Xresources.src"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 31 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 32 "<command-line>" 2
+# 1 ".Xresources.src"
+! Solarized color scheme for the X Window System
+!
+! http:
+
+! Run this through CPP to generate .Xresources, like
+! cpp .Xresources.src -o .Xresources
+
+! Common
+# 20 ".Xresources.src"
+! Dark
+
+!#define S_base03 #002b36
+!#define S_base02 #073642
+!#define S_base01 #586e75
+!#define S_base00 #657b83
+!#define S_base0 #839496
+!#define S_base1 #93a1a1
+!#define S_base2 #eee8d5
+!#define S_base3 #fdf6e3
+
+
+! Light
+# 44 ".Xresources.src"
+! To only apply colors to your terminal, for example, prefix
+! the color assignment statement with its name. Example:
+!
+! URxvt*background: #fdf6e3
+
+*background: #fdf6e3
+*foreground: #657b83
+*fading: 40
+*fadeColor: #fdf6e3
+*cursorColor: #586e75
+*pointerColorBackground: #93a1a1
+*pointerColorForeground: #586e75
+
+*color0: #eee8d5
+*color1: #dc322f
+*color2: #859900
+*color3: #b58900
+*color4: #268bd2
+*color5: #d33682
+*color6: #2aa198
+*color7: #073642
+*color9: #cb4b16
+*color8: #fdf6e3
+*color10: #93a1a1
+*color11: #839496
+*color12: #657b83
+*color13: #6c71c4
+*color14: #586e75
+*color15: #002b36
+
+
+Emacs.font: Inconsolata 13
+
+XTerm*faceName: Inconsolata
+XTerm*faceSize: 13
+
+UXTerm*faceName: Inconsolata
+UXTerm*faceSize: 13
+
+! URxvt config examples e.g. at https:
+
+URxvt.font: xft:Inconsolata:autohint=true:antialias=true,
+            xft:DejaVu Sans Mono:autohint=true:antialias=true:pixelsize=8
+URxvt.boldFont: xft:Inconsolata:bold:autohint=true:antialias=true,
+                xft:DejaVu Sans Mono:bold:autohint=true:antialias=true
+URxvt.italicFont: xft:Inconsolata:italic:autohint=true:antialias=true,
+                   xft:DejaVu Sans Mono:italic:autohint=true:antialias=true
+URxvt.boldItalicFont: xft:Inconsolata:bold:italic:autohint=true:antialias=true,
+                       xft:DejaVu Sans Mono:bold:italic:autohint=true:antialias=true
+
+URxvt*geometry: 132x48
+
+! If using tmux/screen, disable scrolling
+URxvt*scrollWithBuffer: false
+URxvt*scrollBar: false
+URxvt*saveLines: 0
+
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+!URxvt*colorUL: yellow
+!URxvt*colorUL: #ffff00
+URxvt*colorUL: blue
