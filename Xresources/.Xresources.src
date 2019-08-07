@@ -2,6 +2,8 @@
 !
 ! http://ethanschoonover.com/solarized
 
+! Run this through CPP to generate .Xresources, like
+! cpp .Xresources.src -o .Xresources
 
 ! Common
 
