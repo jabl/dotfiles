@@ -5,13 +5,14 @@ case $- in
 esac
 
 alias e='emacsclient -c -a "" '
-export EDITOR='emacsclient -c -a "" '
-export VISUAL='emacsclient -c -a "" '
+#export EDITOR='emacsclient -c -a "" '
+#export VISUAL='emacsclient -c -a "" '
+export EDITOR=vim
 export CLICOLOR=1 # Color ls
 export IPYTHON=1 # pyspark using ipython shell
 export FCFLAGS="-O3 -pipe -march=native"
 export RUST_SRC_PATH=~/Documents/rust/rust/src # For racer
-export PATH=$HOME/.cargo/bin:$PATH:$HOME/.local/bin
+export PATH=$HOME/.cargo/bin:$HOME/.local/go/bin:$PATH:$HOME/.local/bin:/usr/local/cuda/bin/
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -111,3 +112,18 @@ export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear:reset"
 
 # Useful timestamp format
 HISTTIMEFORMAT='%F %T '
+
+
+
+
+# NPM packages in homedir
+NPM_PACKAGES="$HOME/.local/npm-packages"
+
+# Tell our environment about user-installed node tools
+PATH="$NPM_PACKAGES/bin:$PATH"
+# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
+unset MANPATH  # delete if you already modified MANPATH elsewhere in your configuration
+MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
+# Tell Node about these packages
+NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
