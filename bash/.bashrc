@@ -14,6 +14,10 @@ export FCFLAGS="-O3 -pipe -march=native"
 export RUST_SRC_PATH=~/Documents/rust/rust/src # For racer
 export PATH=$HOME/.cargo/bin:$HOME/.local/go/bin:$PATH:$HOME/.local/bin:/usr/local/cuda/bin/
 
+export LANG=sv_FI.utf8
+export LC_MESSAGES=en_US.utf8
+export TIME_STYLE="posix-iso"
+
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
